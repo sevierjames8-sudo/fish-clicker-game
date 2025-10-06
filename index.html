@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fish Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🐟 Fish Clicker</h1>
+  <p>Fish: <span id="fishCount">0</span></p>
+  <p>Coins: <span id="coins">0</span></p>
+
+  <img src="fish.png" id="fish" alt="Fish">
+
+  <div id="actions">
+    <button id="sellFish">Sell 1 Fish</button>
+  </div>
+
+  <div id="upgrades">
+    <button id="buyAutoClicker">Buy AutoClicker (cost: 10 coins)</button>
+    <button id="buyAutoSeller">Buy AutoSeller (cost: 25 coins)</button>
+  </div>
+
+  <!-- Traits and Rebirth buttons will be added dynamically by script.js -->
+
+  <!-- ==========================
+  🎁 Code Redeem System
+  ========================== -->
+  <div id="codeSection" style="margin-top: 20px; text-align: center;">
+    <h3>🎁 Codes</h3>
+    <input
+      type="text"
+      id="codeInput"
+      placeholder="Enter code..."
+      style="padding: 5px; border-radius: 5px;"
+    />
+    <button id="redeemBtn" style="padding: 5px 10px;">Redeem</button>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Connect redeem button to the JS function
+    document.getElementById("redeemBtn").onclick = () => {
+      const code = document.getElementById("codeInput").value.trim();
+      if (typeof redeemCode === "function") {
+        redeemCode(code);
+      }
+    };
+  </script>
+</body>
+</html>
